@@ -1,0 +1,574 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  padding-top: 0%;
+}
+
+.mainContainer{
+  background-color: #6200c0;
+  width: 100%;
+  margin-top:-8%;
+  height: auto;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topContainer{
+  background-color: none;
+  z-index: 1;
+}
+
+.navigationSection{
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  flex-direction: row;
+  justify-content: end;
+  padding: 0px;
+  margin-bottom: 50px;
+}
+
+.logoSection{
+  flex-direction: row;
+  width: 30%;
+  height: 40px;
+  background-color: transparent;
+  align-items: center;
+  color: white;
+  text-align:center ;
+
+  font-family: 'Century Gothic', sans-serif;
+  font-weight: 600;
+}
+
+.logo{
+  width: 40%;
+  height: 50px;
+  background-color: transparent;
+  float: left;
+}
+
+.logoTitle{
+  width: 100%;
+  height: 50px;
+  text-align: left;
+  align-items: center;
+  justify-content:end;
+  background-color: transparent;
+}
+
+.linkSection{
+  height: auto;
+  padding: 5px;
+  background-color: transparent;
+  align-items: end;
+  font-family: 'Century Gothic', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: white;
+}
+
+.navLinks{
+  width: auto;
+  height: auto;
+  flex-direction: row;
+  float : left;
+
+}
+
+.dv{
+  margin-right: 5px;
+  padding: 5px;
+}
+
+.dv:hover, .dv:active, .dv:focus{
+  background-color: rgba(255, 255, 255, 0.104);
+  border-radius: 10px;
+  scale: 1.1;
+  transition-duration: 100ms;
+}
+
+
+.welcomeSection{
+  width: 100%;
+  height: auto;
+  margin-top: 4%;
+  padding: 80px;
+  background-color: transparent;
+  flex-direction: row;
+}
+
+.greeting{
+  width: 200px;
+  height: auto;
+  padding: 10px;
+  background-color: #6D13C7;
+  border-radius: 15px;
+  color: white;
+  font-family: 'Century Gothic', sans-serif;
+  text-align: center;
+  font-weight: 500;
+}
+
+.titleSection{
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.title{
+  color: white;
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.tDescription{
+  color: white;
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.photoSection{
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  align-self: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.bottomSection{
+  width: 70px;
+  height: 70px;
+  padding: 0px;
+  background-color: transparent;
+  border-radius: 50%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/*About Us Section CSS*/
+
+.aboutMainContainer{
+  width:100%;
+  height:550px;
+  padding: 20px;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.aboutTitle{
+  width: 100%;
+  height: 90px;
+  padding: 5px;
+  background-color: transparent;
+  font-family: 'Century Gothic', sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+  color:#FE7C56
+
+}
+
+.aboutSubContainer{
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  background-color: transparent;
+  flex-direction: row;
+  float: left;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  font-family: 'Century Gothic', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.aboutDesc{
+  width: 60%;
+  text-align: center;
+  height: auto;
+  padding: 40px;
+  background-color: #FE7C56;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
+}
+
+/*Home Slider CSS*/
+
+.sliderContainer{
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  background-color: transparent;
+}
+
+
+.carousel {
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  background-color: transparent;
+  position: relative;
+  object-fit: cover;
+}
+
+.carousel-inner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 450px;
+}
+
+.carousel-open:checked + .carousel-item {
+  position: static;
+  opacity: 100;
+}
+
+.carousel-item {
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity 0.6s ease-out;
+  transition: opacity 0.6s ease-out;
+}
+
+.carousel-item img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.carousel-control {
+  background: rgba(0, 0, 0, 0.28);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  font-size: 40px;
+  height: 40px;
+  line-height: 35px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  cursor: pointer;
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  text-align: center;
+  width: 40px;
+  z-index: 10;
+}
+
+.carousel-control.prev {
+  left: 2%;
+}
+
+.carousel-control.next {
+  right: 2%;
+}
+
+.carousel-control:hover {
+  background: rgba(0, 0, 0, 0.8);
+  color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+  display: block;
+}
+
+.carousel-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
+}
+
+.carousel-indicators li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.carousel-bullet {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 35px;
+}
+
+.carousel-bullet:hover {
+  color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+  color: #FE7C56;
+}
+
+
+/*hola uwu*/
+
+/*Footer Section CSS*/
+
+.footer{
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  position: sticky;
+  background-color: #FE7C56;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  color: #fff;
+  font-family: 'Century Gothic', sans-serif;
+}
+
+.footerTitle{
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.copyrightContainer{
+  width: 100%;
+  height: auto;
+  padding:10px;
+  background-color: transparent;
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+/*css for registration forms*/
+
+.mainFormContainer{
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.formTitle{
+  width: 100%;
+  height: auto;
+  background-color: #B2D93A;
+  border-radius: 20px 20px 0px 0px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+}
+
+.formMargins{
+  width: 100%;
+  height: auto;
+  background-color: rgba(71, 255, 25, 0.164);
+  border-radius: 0px 0px 20px 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/*css for map container*/
+
+.mainMapContainer{
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 90px;
+}
+
+.mapContainer{
+  width: auto;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 20px 20px;
+  background-color: #B2D93A;
+  border-color: #B2D93A;
+  border-style: solid 10px;
+  border-width: 2px;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+}
+
+.containerGrande{
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.mapFormTitle{
+  width: 100%;
+  height: auto;
+  background-color: #B2D93A;
+  border-radius: 20px 20px 0px 0px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+}
+
+/*Modal Container css*/
+
+.mainModalArea{
+  width: 700px;
+  height: auto;
+  padding: 10px;
+  background-color: #6200c0;
+}
+
+.modalContainer{
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  text-overflow: clip;
+
+}	
+/*PopUp slider Css*/
+
+
+/*icons css*/
+
+.icon{
+  width: 20px;
+  height: 20px;
+  flex-direction: row;
+  margin-right: 5px;
+}
+
+.formContainer {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top: 10%;
+}
+
+.tableContainer {
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding-top: 10%;
+  border-width: 2px;
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+/*LogIn CSS*/
+
+.loginTitle{
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  background-color: transparent;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: white;
+  font-family: 'Century Gothic', sans-serif;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.loginContainer{
+  width: 100%;
+  height: 700px;
+  background-color: red;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.logInSubContainer{
+  width: 100%;
+  height: auto;
+  background-color: green;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+
+
