@@ -1,8 +1,15 @@
 import React from "react";
 import Link from "next/link";
-
+import { useRouter } from 'next/router'
 
 function Footer() {
+
+  const router = useRouter();
+  const showHeader = router.pathname === '/login' ? false : true;
+  if (!showHeader) {
+    return null;
+  }
+
     return <div>
         <div className="footer">
         <div className="footerTitle">

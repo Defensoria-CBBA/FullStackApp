@@ -4,11 +4,41 @@ import { useEffect, useState} from 'react';
 import {getBackendData} from './api/backend.api'
 import { get } from 'http';
 import { set } from 'react-hook-form';
+import { TableBody } from '@nextui-org/react/types/table/base';
 
 
 export default function dataTable() {
     
     const [personAll, setPerson] = useState([]);
+
+    const columns = [
+        {
+            title: 'Nombre',
+            dataIndex: 'name',
+            key: 'name',
+            render: (text: any) => <a>{text}</a>,
+        },
+        {
+            title: 'Apellido',
+            dataIndex: 'lastName',
+            key: 'lastName',
+        },
+        {
+            title: 'CI',
+            dataIndex: 'ci',
+            key: 'ci',
+        },
+        {
+            title: 'Email',
+            dataIndex: 'email',
+            key: 'email',
+        },
+        {
+            title: 'Acciones',
+            dataIndex: 'acciones',
+            key: 'acciones',
+        }
+    ];
 
     useEffect(() => {
         async function loadData(){
@@ -19,13 +49,24 @@ export default function dataTable() {
         loadData();
     }, [])
 
+    const data = [
+        
+        {
+            key: '1',
+            name: 'John',
+            lastName: 'Brown',
+            ci: 123456,
+            email: 'jb@gmail.com',
+            
+        },
+    ];
+
     return (
         <div>
-            {personAll.map(person => (
-                <div key={person.id}>
-                    <h1>{person.id} {person.name} {person.secondName} {person.lastName} {person.secondLastName}</h1>
-                </div>
-            ))}
+            <div className='tableContainer'>
+            
+                <Table />
+            </div>
         </div>
     );
 }

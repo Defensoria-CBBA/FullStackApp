@@ -87,6 +87,7 @@ DATABASES = {
         'PASSWORD': '#BolivianosElHadoPropicio-6bs?2bs_250bs',
         'HOST': 'database-guarderia.c6i1umydgul8.sa-east-1.rds.amazonaws.com',
         'PORT': '3306',
+        'ATOMIC_REQUESTS': True,
     }
 }
 

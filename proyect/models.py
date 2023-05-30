@@ -20,6 +20,7 @@ class person(models.Model):
     def __str__(self):
         return self.name
 
+
 class tutor(models.Model):
     id = models.AutoField(primary_key=True)
     person_id = models.ForeignKey(person, on_delete=models.CASCADE)

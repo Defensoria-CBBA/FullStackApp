@@ -44,4 +44,3 @@ class announcementsView(viewsets.ModelViewSet):
 class complaintView(viewsets.ModelViewSet):
     serializer_class = complaintSerializer
     queryset = complaint.objects.all()
-    

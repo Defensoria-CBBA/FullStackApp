@@ -1,12 +1,15 @@
 import React from 'react';
 import { GoogleMap, Marker, MarkerF, useJsApiLoader } from '@react-google-maps/api';
 import { Modal, useModal, Button, Text } from "@nextui-org/react";
-
+import { useEffect, useState} from 'react';
+import {getBackendStablishments} from './api/backend.api'
 
 const containerStyle = {
     width: '100%' ,
     height: '700px',
 };
+
+const [stablishmentAll, setStablishment] = useState([]);
 
 const center = {
     lat: -17.365500, 
@@ -42,6 +45,14 @@ function MyComponent() {
         setMap(null)
     }, [])
 
+    useEffect(() => {
+        async function loadData(){
+            const res = await getBackendStablishments();
+            console.log(res);
+            setStablishment(res.data);
+        }
+        loadData();
+    }, [])
     
     return isLoaded ? (
         <div className='containerGrande'>
@@ -50,7 +61,7 @@ function MyComponent() {
 
 
             <div className="mapContainer">
-            
+
                 <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={center}
@@ -58,8 +69,9 @@ function MyComponent() {
                 onLoad={onLoad}
                 onUnmount={onUnmount}
                 >
-                    <MarkerF position={center} onClick={() => setVisible(true)}/>
-                    <MarkerF position={center2} onClick={() => setVisible(true)}/>
+                    {stablishmentAll.map(stablishment=>(
+                        <MarkerF position={center} onClick={() => setVisible(true)}/>
+                    ))}
                 </GoogleMap>
 
             </div>
