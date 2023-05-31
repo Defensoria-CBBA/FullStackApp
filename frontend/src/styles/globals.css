@@ -563,7 +563,7 @@ body {
   height: auto;
   padding: 10px;
   background-color: transparent;
-  margin-top: 10px;
+  margin-top: 60%;
   margin-bottom: 10px;
   color: #6200c0;
   font-family: 'Century Gothic', sans-serif;
@@ -589,6 +589,8 @@ body {
 .logInSubContainer{
   width: 100%;
   height: auto;
+  margin-top: 40px;
+  background-color: transparent;
   flex-direction: row;
   align-items: center;
   align-content: center;
@@ -605,11 +607,23 @@ body {
   align-items: center;
   align-content: center;
   justify-content: center;
-  padding: 10px;
+  padding: 30px;
   border-radius: 0px 20px 20px 0px;
   background-image: url('/images/prek-teacher3.jpg');
   background-size: cover;
   background-position: center;
+}
+
+.loginPicBox{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 0px 20px 20px 0px;
 }
 
 /*Circle Orbit animation*/
@@ -659,7 +673,7 @@ body {
 
 .middle-orbit-cirlces {
   position: absolute;
-  top: -10px;
+  top: -5px;
   left: 350px;
   height: 20px;
   width: 20px;
@@ -700,6 +714,3 @@ body {
     transform: rotate(360deg);
   }
 }
-
-
-

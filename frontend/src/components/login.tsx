@@ -45,24 +45,19 @@ const FormData = () => {
                             />
                         </Form.Item>
                         <Form.Item>
-                            <Form.Item name="remember" valuePropName="checked" noStyle>
-                            <Checkbox>Remember me</Checkbox>
-                            </Form.Item>
-                    
                             <a className="login-form-forgot" href="" color="white">
-                            Olvidaste tu contraseña?
+                                Olvidaste tu contraseña?
                             </a>
                         </Form.Item>
                     
                         <Form.Item>
                             <Button
-                            
                             htmlType="submit"
-                            className="login-form-button"
-                            >
+                            className="login-form-button justify-center"
+                            style={{backgroundColor: "#FFB800", color: "white", width: "100%", height: "50px", borderRadius: "5px",
+                                fontFamily: "Century Gothic", fontSize: "16px", fontWeight: "bold"}}>
                             Iniciar Sesión
                             </Button>
-                            
                         </Form.Item>
                     </Form>
                 </div>

@@ -9,7 +9,7 @@ function Footer() {
   if (!showHeader) {
     return null;
   }
-
+  
     return <div>
         <div className="footer">
         <div className="footerTitle">
