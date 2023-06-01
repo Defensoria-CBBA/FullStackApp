@@ -346,10 +346,11 @@ body {
 /*Footer Section CSS*/
 
 .footer{
-  width: 100%;
-  height: auto;
+  position: -webkit-sticky;
+  left: 0;
   bottom: 0;
-  position: sticky;
+  width: 100%;
+  height: 200px;
   background-color: #FE7C56;
   flex-direction: row;
   align-items: center;
@@ -387,33 +388,98 @@ body {
 /*css for registration forms*/
 
 .mainFormContainer{
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  background-color: #fff;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 100px;
+}
+
+.formSubContainer{
+  width: 780px;
   height: auto;
   background-color: transparent;
-  flex-direction: column;
+  padding: 45px;
+  margin: 0 auto;
+  margin-top: 5%;
+  flex-direction: row;
   align-items: center;
+  align-content: center;
   justify-content: center;
-  padding: 40px;
 }
 
 .formTitle{
   width: 100%;
-  height: auto;
-  background-color: #B2D93A;
-  border-radius: 20px 20px 0px 0px;
+  height: 300px;
+  border-radius: 20px 20px 20px 20px;
+  background-image: url('/images/teachers1.jpg');
+  background-size: cover;
+  background-position: center;
   align-items: center;
   justify-content: center;
+  text-align: center;
   padding: 10px;
+}
+
+.formTitleTT{
+  width: 100%;
+  height: 300px;
+  border-radius: 20px 20px 20px 20px;
+  background-image: url('/images/tutor1.jpg');
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.formssubTitle{
+  width: 100%;
+  height: auto;
   font-family: 'Century Gothic', sans-serif;
-  font-size: 30px;
+  font-size: 50px;
   font-weight: 700;
   color: white;
+  margin: 0 auto;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+.picContainer{
+  position: fixed;
+  width: 670px;
+  height: 280px;
+  background-color: #fe7d5685;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.picContainerTT{
+  position: fixed;
+  width: 670px;
+  height: 280px;
+  background-color: #70d2f063;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .formMargins{
   width: 100%;
   height: auto;
-  background-color: rgba(71, 255, 25, 0.164);
+  background-color: white;
   border-radius: 0px 0px 20px 20px;
   flex-direction: column;
   align-items: center;
@@ -421,11 +487,124 @@ body {
   padding: 20px;
 }
 
-/*css for map container*/
+.circlesConatiner{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 980px;
+  height: 100%;
+  z-index: -1;
+}
 
-.mainMapContainer{
+.big--circle {
+  width: 2800px;
+  height: 2800px;
+  border-radius: 50%;
+  border: 5px dashed #6200c0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: right;
+  position: relative;
+  animation: follow linear 30s infinite;
+}
+
+.big--circle-content {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #70D2F0;
+  top: -50px;
+  bottom: 0;
+}
+
+.big--circle-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.mid--circle {
+  width: 2400px;
+  height: 2400px;
+  border-radius: 50%;
+  border: 5px dashed #70D2F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: follow linear 45s infinite;
+}
+
+.mid--circle-content {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #6200c0;
+  top: -35px;
+  bottom: 0;
+}
+
+.mid--circle-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.small--circle {
+  width: 2000px;
+  height: 2000px;
+  border-radius: 50%;
+  border: 5px dashed #6200c0;
+  animation: follow linear 60s infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.small--circle-content {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #70D2F0;
+  top: -25px;
+  bottom: 0;
+}
+
+.small--circle-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+@keyframes follow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes follow-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/*Css for Stablishments forms*/
+
+.sFormContainer{
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   background-color: transparent;
   flex-direction: column;
   align-items: center;
@@ -434,37 +613,40 @@ body {
   padding: 90px;
 }
 
-.mapContainer{
-  width: auto;
-  height: auto;
+/*css for map container*/
+
+.mainMapContainer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  flex-direction: column;
   align-items: center;
+  align-content: center;
   justify-content: center;
-  border-radius: 0 0 20px 20px;
-  background-color: #B2D93A;
-  border-color: #B2D93A;
-  border-style: solid 10px;
-  border-width: 2px;
-  padding-top: 1.5%;
-  padding-bottom: 1.5%;
+  padding: 90px;
 }
 
-.containerGrande{
-  width: auto;
-  height: auto;
+.secondMapCont{
+  width: 780px;
+  height: 650px;
+  padding: 5px;
+  margin: 0 auto;
   background-color: transparent;
   flex-direction: row;
   align-items: center;
+  align-content: center;
   justify-content: center;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-top: 5%;
-  margin-bottom: 5%;
 }
+
+
 
 .mapFormTitle{
   width: 100%;
   height: auto;
-  background-color: #B2D93A;
+  background-color: #6200c0;
   border-radius: 20px 20px 0px 0px;
   align-items: center;
   justify-content: center;
@@ -558,6 +740,21 @@ body {
   justify-content: center;
 }
 
+.PicContainer{
+  width: 60%;
+  height: auto;
+  background-color: transparent;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 0px 20px 20px 0px;
+  background-image: url('/images/prek-teacher3.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
 .loginTitle{
   width: 100%;
   height: auto;
@@ -617,13 +814,17 @@ body {
 .loginPicBox{
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  flex-direction: row;
-  align-items: center;
-  align-content: center;
+  background-color: #fe7d5671;
+  border-radius: 20px;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   padding: 10px;
-  border-radius: 0px 20px 20px 0px;
+  font-family: 'Century Gothic', sans-serif;
+  color: white;
+  font-size: 60px;
+  font-weight: bold;
 }
 
 /*Circle Orbit animation*/

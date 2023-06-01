@@ -7,7 +7,7 @@ export default function NavBar({children}:any) {
   //hide NavBar component when going to login page
   const router = useRouter();
   const showHeader = router.pathname === '/login' ? false : true;
-  if (!showHeader) {
+  if (!showHeader ) {
     return null;
   }
   
@@ -34,6 +34,7 @@ export default function NavBar({children}:any) {
           </Navbar.Link>
           <Navbar.Link href="/employee">Nuevo Funcionario</Navbar.Link>
           <Navbar.Link href="/stablishment">Nuevo Centro</Navbar.Link>
+          <Navbar.Link href="/tutor">Nuevo tutor</Navbar.Link>
         </Navbar.Content>
         <Navbar.Content>
           <Navbar.Link color="inherit" href="/login">

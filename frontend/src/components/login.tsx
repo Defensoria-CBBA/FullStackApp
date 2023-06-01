@@ -54,8 +54,9 @@ const FormData = () => {
                             <Button
                             htmlType="submit"
                             className="login-form-button justify-center"
-                            style={{backgroundColor: "#FFB800", color: "white", width: "100%", height: "50px", borderRadius: "5px",
-                                fontFamily: "Century Gothic", fontSize: "16px", fontWeight: "bold"}}>
+                            href="/"
+                            style={{backgroundColor: "#FE7C56", color: "white", width: "100%", height: "50px", borderRadius: "5px",
+                                fontFamily: "Century Gothic", fontSize: "25px", fontWeight: "bold"}}>
                             Iniciar Sesión
                             </Button>
                         </Form.Item>
@@ -63,7 +64,9 @@ const FormData = () => {
                 </div>
             </div>
             <div className="loginPicContainer">
-
+                <div className="loginPicBox">
+                    <h1>Centros Infantiles</h1>
+                </div>
             </div>
             </div>
             

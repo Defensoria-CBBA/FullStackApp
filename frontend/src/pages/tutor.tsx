@@ -43,13 +43,12 @@ export default function Home() {
        
 
         <div className="formSubContainer">
-            <div className="formTitle">
-                <div className="picContainer">
+            <div className="formTitleTT">
+                <div className="picContainerTT">
                     <div className="formssubTitle">
-                        <h1>Registro de Funcionarios</h1>
+                        <h1>Registro de Tutores</h1>
                     </div>
                 </div>
-                
             </div>
             <form className="formMargins">
                 <div className="relative z-0 w-full mb-6 group">
