@@ -5,11 +5,7 @@ import { useRouter } from 'next/router'
 export default function NavBar({children}:any) {
     
   //hide NavBar component when going to login page
-  const router = useRouter();
-  const showHeader = router.pathname === '/login' ? false : true;
-  if (!showHeader ) {
-    return null;
-  }
+  
   
     return (
      <>

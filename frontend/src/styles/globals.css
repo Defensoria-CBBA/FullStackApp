@@ -26,23 +26,29 @@ body {
 .mainContainer{
   background-color: #6200c0;
   width: 100%;
-  margin-top:-8%;
+  margin-top:0;
   height: auto;
   flex-direction: column;
   align-items: center;
 }
 
 .topContainer{
-  background-color: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #6200c0;
   z-index: 1;
+  padding: 15px;
+  height: 90px;
 }
 
 .navigationSection{
   width: 100%;
-  height: 40px;
+  height: 55px;
   background-color: transparent;
   flex-direction: row;
   justify-content: end;
+  text-align: center;
   padding: 0px;
   margin-bottom: 50px;
 }
@@ -50,21 +56,21 @@ body {
 .logoSection{
   flex-direction: row;
   width: 30%;
-  height: 40px;
+  height: 55px;
   background-color: transparent;
   align-items: center;
   color: white;
   text-align:center ;
-
+  float: left;
   font-family: 'Century Gothic', sans-serif;
   font-weight: 600;
 }
 
 .logo{
-  width: 40%;
-  height: 50px;
+  width: 100%;
+  height: 70px;
   background-color: transparent;
-  float: left;
+  margin-left: 50%;
 }
 
 .logoTitle{
@@ -81,32 +87,58 @@ body {
   padding: 5px;
   background-color: transparent;
   align-items: end;
+  text-align: center;
   font-family: 'Century Gothic', sans-serif;
   font-weight: 600;
   font-size: 15px;
   color: white;
+  align-items: center;
 }
 
 .navLinks{
   width: auto;
   height: auto;
+  margin-left: 15px;
   flex-direction: row;
-  float : left;
-
+  text-align: center;
+  background-color: transparent;
+  color: white;
 }
 
-.dv{
-  margin-right: 5px;
-  padding: 5px;
+.navLinks.circleBehind a:before, .navLinks.circleBehind a:after
+{
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #FE7C56;
+    transform: translateX(-50%) translateY(-50%) scale(0.5);
+    border-radius: 50%;
+    background: transparent;
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+    z-index: -1;
 }
 
-.dv:hover, .dv:active, .dv:focus{
-  background-color: rgba(255, 255, 255, 0.104);
-  border-radius: 10px;
-  scale: 1.1;
-  transition-duration: 100ms;
+.navLinks.circleBehind a:after
+{
+    border-width: 2px;
+    transition: all 0.4s;
 }
 
+.navLinks.circleBehind a:hover:before
+{
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+}
+
+.navLinks.circleBehind a:hover:after
+{
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%) scale(1.3);
+}
 
 .welcomeSection{
   width: 100%;
