@@ -1,13 +1,44 @@
 import React from "react";
 import { Form, Input, Button, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
+import { getAllEmployees } from "@/pages/api/backend.api";
+import {useEffect, useState} from 'react';
+import { useRouter } from "next/router";
 
+interface LoginPageProps {
+    loginCallback: () => void;
+  }
 
-const FormData = () => {
+const FormData = ({onLogin} : {onLogin:boolean}) => {
 
-    const onFinish = (values: any) => {
-        console.log("Received values of form: ", values);
-    };
+    const [employeeAll, setEmployee] = useState([]);
+
+    useEffect(() => {
+        async function loadData(){
+            const res = await getAllEmployees();
+            console.log(res);
+            setEmployee(res.data);
+        }
+        loadData();
+    })
+
+    const router = useRouter();
+
+    const handleLogin = ({ email, password }: { email: string, password: string }) => {
+        
+
+        const employee = employeeAll.find((employee) => employee.email === email && employee.password === password);
+        if (employee) {
+          // Employee found, proceed with login
+          console.log('Login successful');
+          onLogin=true;
+          router.push('/'); // Replace '/home' with the actual route to your home page
+          
+        } else {
+          // Invalid email or password
+          console.log('Invalid email or password');
+        }
+      };
 
     return (
         
@@ -23,20 +54,21 @@ const FormData = () => {
                         name="normal_login"
                         className="login-form"
                         initialValues={{ remember: true }}
-                        onFinish={onFinish}
+                        onFinish={handleLogin}
                         >
                         <Form.Item
-                            name="username"
-                            rules={[{ required: true, message: "Please input your Username!" }]}
+                            name="email"
+                            rules={[{ required: true, message: "Por favor ingrese su email!" }]}
                         >
+                           
                             <Input
                             prefix={<UserOutlined className="site-form-item-icon" />}
-                            placeholder="Nombre de usuario"
+                            placeholder="Email"
                             />
                         </Form.Item>
                         <Form.Item
                             name="password"
-                            rules={[{ required: true, message: "Please input your Password!" }]}
+                            rules={[{ required: true, message: "Por favor ingrese su contraseña!" }]}
                         >
                             <Input
                             prefix={<LockOutlined className="site-form-item-icon" />}
@@ -54,7 +86,7 @@ const FormData = () => {
                             <Button
                             htmlType="submit"
                             className="login-form-button justify-center"
-                            href="/"
+                            
                             style={{backgroundColor: "#FE7C56", color: "white", width: "100%", height: "50px", borderRadius: "5px",
                                 fontFamily: "Century Gothic", fontSize: "25px", fontWeight: "bold"}}>
                             Iniciar Sesión

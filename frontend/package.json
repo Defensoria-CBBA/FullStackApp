@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.1.2",
+    "@material/data-table": "^14.0.0",
     "@nextui-org/react": "^1.0.0-beta.13",
     "@react-google-maps/api": "^2.18.1",
     "@types/node": "20.2.4",
@@ -25,6 +26,7 @@
     "react-hook-form": "^7.43.9",
     "react-hot-toast": "^2.4.1",
     "react-router-dom": "^6.11.2",
+    "react-table": "^7.8.0",
     "tailwindcss": "3.3.2",
     "tw-elements": "^1.0.0-beta2",
     "typescript": "5.0.4"

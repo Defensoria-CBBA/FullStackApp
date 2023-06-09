@@ -1,36 +1,64 @@
 import axios from 'axios';
+import { useState } from 'react';
 
-export const getBackendData = async () => {
-    return axios.get('http://127.0.0.1:8000/backend/api/v1/person/');
-}
+const getAll = axios.create({
+    baseURL:"http://127.0.0.1:8000/centros/api/v1/",
+})
 
-export const getBackendTutor = async () => {
-    return axios.get('http://127.0.0.1:8000/backend/api/v1/tutor/');
-}
+axios.defaults.headers["Access-Control-Allow-Origin"] = "*"
+//Stablishments
 
-export const getBackendEmployee = async () => {
-    return axios.get('http://127.0.0.1:8000/backend/api/v1/employee/');
-}
+export const getAllStabs = () => getAll.get('stablishments/');
 
-export const getBackendChild = async () => {
-    return axios.get('http://127.0.0.1:8000/backend/api/v1/child/');
-}
+//get stablishments by id (?)
+export const getStabsById = (id) => getAll.get(`stablishments/${id}/`);
 
-export const getBackendTutor_Child = async () => {
-    return axios.get('http://127.0.0.1:8000/backend/api/v1/tutor_child/');
-}
+export const createstabs = (stabs) => getAll.post('stablishments/', stabs);
 
-export const getBackendSchedule= async () => {
-    return axios.get('http://127.0.0.1:8000/backend/api/v1/schedule/');
-}
+export const deleteStabs = (id) => getAll.delete(`stablishments/${id}/`);
 
-export const getBackendClass_Group = async () => {
-    return axios.get('http://127.0.0.1:8000/backend/api/v1/class_group/');
-}
+export const updateStabs = (id, stabs) => getAll.put(`stablishments/${id}/`, stabs, {headers: {
+  "Content-Type": "application/json",
+}});
 
-export const getBackendStablishments = async () => {
-    return axios.get('http://127.0.0.1:8000/backend/api/v1/stablishments/');
-}
+
+//Tutor
+
+export const getAllTutors = () => getAll.get('tutor/');
+
+export const getTutorsById = (id) => getAll.get(`tutor/${id}/`);
+
+
+export const createTutor = (person) => getAll.post('tutor/', person,  {headers: {
+    "Content-Type": "application/json",
+  }});
+export const deleteTutors = (id) => getAll.delete(`tutor/${id}/`);
+
+export const updateTutors = (id, tutor) => getAll.put(`tutor/${id}/`, tutor, {headers: {
+  "Content-Type": "application/json",
+}});
+
+
+//Employee
+
+export const getAllEmployees = () => getAll.get('employee/');
+
+export const getEmployeeById = (id) => getAll.get(`employee/${id}/`);
+
+
+export const createEmployee = (person) => getAll.post('employee/', person,  {headers: {
+    "Content-Type": "application/json",
+  }});
+export const deleteEmployees = (id) => getAll.delete(`employee/${id}/`);
+
+export const updateEmployees = (id, employee) => getAll.put(`employee/${id}/`, employee, {headers: {
+  "Content-Type": "application/json",
+}});
+
+//Get schedule
+
+export const getAllScheds = () => getAll.get('schedule/');
+
 
 export const getBackendComplaint = async () => {
     return axios.get('http://127.0.0.1:8000/backend/api/v1/complaint/');
