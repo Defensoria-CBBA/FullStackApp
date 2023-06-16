@@ -60,12 +60,14 @@ export const updateEmployees = (id, employee) => getAll.put(`employee/${id}/`, e
 export const getAllScheds = () => getAll.get('schedule/');
 
 
-export const getBackendComplaint = async () => {
-    return axios.get('http://127.0.0.1:8000/backend/api/v1/complaint/');
-}
+//Complaints
 
+export const getAllComplaints = () => getAll.get('complaint/');
+
+
+//Announcements
 export const getBackendAnnouncements = async () => {
-    return axios.get('http://127.0.0.1:8000/backend/api/v1/announcements/');
+    return axios.get('announcements/');
 }
 
 

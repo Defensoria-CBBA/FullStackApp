@@ -40,6 +40,13 @@ export default function NavBar( {children}:any) {
                   </li>
                 </div>
 
+                <div className="dv">
+                  <li className="navLinks flex flex-column circleBehind">
+                    <img className="icon" src="/images/complaint.png"></img>
+                    <Link color={'inherit'} href="/complaints">Complaints</Link>
+                  </li>
+                </div>
+
                 {!isLoggedIn && (
                   <>
                     <div className="dv">
