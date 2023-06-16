@@ -80,12 +80,12 @@ WSGI_APPLICATION = 'django_api.wsgi.application'
 DATABASES = {
    'default': {
         # MySQL engine. Powered by the mysqlclient module.
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'centrosdb',
-        'USER': 'admin',
-        'PASSWORD': 'PASSWORD DE LA BASE DE DATOS',
-        'HOST': 'HOST DE LA BASE DE DATOS',
-        'PORT': '3306',
+        'ENGINE': 'YOUR DATABASE ENGINE',
+        'NAME': 'YOUR DATABASE NAME',
+        'USER': 'YOUR USERNAME',
+        'PASSWORD': 'YOUR DATABASE PASSWORD',
+        'HOST': 'YOUR DATABASE HOST',
+        'PORT': 'YOUR ALLOWED PORTS FOR THE DATABASE',
         'ATOMIC_REQUESTS': True,
     }
 }
