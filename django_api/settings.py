@@ -83,8 +83,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'centrosdb',
         'USER': 'admin',
-        'PASSWORD': '#BolivianosElHadoPropicio-6bs?2bs_250bs',
-        'HOST': 'database-guarderia.c6i1umydgul8.sa-east-1.rds.amazonaws.com',
+        'PASSWORD': 'PASSWORD DE LA BASE DE DATOS',
+        'HOST': 'HOST DE LA BASE DE DATOS',
         'PORT': '3306',
         'ATOMIC_REQUESTS': True,
     }
